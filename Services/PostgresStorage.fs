@@ -7,7 +7,7 @@ open FSharp.Data.Sql
 open Npgsql
 open Microsoft.Extensions.DependencyInjection
 
-
+//Static connection string used through build time inside sdk container 
 let [<Literal>] connectionString = "Host=192.168.7.254;Port=5432;Database=schemas;Username=andrey;Password=123456"
 let [<Literal>] RR = @"~/.nuget/packages/npgsql/5.0.0/lib/net5.0"
 
@@ -18,7 +18,7 @@ type sql = SqlDataProvider<
               IndividualsAmount = 1000,
               UseOptionTypes = true>
 
-
+// runtime connection string
 let getConnectionString(config: DbConfig) : string =
      "Host=" + config.DbHost + ";Port=5432;Database=" + config.DbName + ";Username=" + config.DbUser + ";Password=" + config.DbPass
 
