@@ -36,6 +36,4 @@ let main _ =
         .Build()
         .Run()
     0
- 
-
- // docker run -d -p 5000:80 --env APP-DB-HOST=192.168.7.254 --env APP-DB-NAME=schemas --env APP-DB-USER=schema_service --env APP-DB-PASS=@12345 schemas:latest
+    
